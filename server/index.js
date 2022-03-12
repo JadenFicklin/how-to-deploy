@@ -21,7 +21,7 @@ app.post("/api/addComment", async (req, res) => {
 
   //add data to database
   const data = await sequelize.query(
-    `INSERT INTO comments (testcomment) VALUES ('${comment}')`
+    `INSERT INTO test (testcomment) VALUES ('${comment}')`
   );
 
   res.status(200).send(data[0]);
