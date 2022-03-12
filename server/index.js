@@ -14,6 +14,13 @@ app.get("/test/", async (req, res) => {
   res.status(200).send(data);
 });
 
+//get the comments
+app.get("/api/getComment", async (req, res) => {
+  const data = await sequelize.query(`SELECT * FROM test`);
+  res.status(200).send(data[0]);
+});
+
+//this goes after all app calls
 app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "../build", "index.html"));
 });
