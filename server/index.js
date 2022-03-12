@@ -14,6 +14,19 @@ app.get("/test/", async (req, res) => {
   res.status(200).send(data);
 });
 
+//post the comments
+app.post("/api/addComment", async (req, res) => {
+  //get user data from request object
+  const { comment } = req.body;
+
+  //add data to database
+  const data = await sequelize.query(
+    `INSERT INTO comments (testcomment) VALUES ('${comment}')`
+  );
+
+  res.status(200).send(data[0]);
+});
+
 //get the comments
 app.get("/api/getComment", async (req, res) => {
   const data = await sequelize.query(`SELECT * FROM test`);
