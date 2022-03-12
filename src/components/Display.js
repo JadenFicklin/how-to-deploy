@@ -18,7 +18,7 @@ function Display() {
     <>
       <h1>Display</h1>
       {array.map((item) => (
-        <h5 key={item.id}>{item.comment}</h5>
+        <h5 key={item.id}>{item.testcomment}</h5>
       ))}
     </>
   );
