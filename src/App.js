@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./App.css";
+import Display from "./components/Display";
 
 function App() {
   const [info, setInfo] = useState("");
@@ -17,6 +18,7 @@ function App() {
       <header className="App-header">
         {info ? info : <p>Heroku Deployment Example</p>}
         <button onClick={buttonClick}>Click here</button>
+        <Display />
       </header>
     </div>
   );
